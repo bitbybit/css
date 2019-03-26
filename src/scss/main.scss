@@ -1,0 +1,48 @@
+/* https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97 */
+:root {
+    font-size: 62.5%;
+}
+
+$path_static: './static'; /* #{$path_static} */
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1250px
+);
+
+$font-size-base: 1.6rem;
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+$line-height-base: 1.618;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+
+@import "page";
+
+.container {
+    @include make-container();
+    @include make-container-max-widths();
+}
+
+.block {
+    @include make-row();
+
+    &__element {
+        @include make-col(1, 3);
+    }
+}
+
+@include media-breakpoint-down(md) {
+}
